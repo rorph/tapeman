@@ -1,0 +1,5 @@
+tapeman.db
+include/config.json
+include/env.sh
+etc/nginx/tapeman.conf
+tapeman.db
