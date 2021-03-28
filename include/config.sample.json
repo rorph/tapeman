@@ -1,0 +1,56 @@
+{
+	"DEV_ENV": true,
+	"debug_key": "key_to_enable_debug_as_GET",
+	"debug_to_file": false,
+	"pre_flight_expiry": 604800,
+	"db": {
+		"type": "sqlite",
+		"path": "tapeman.db"
+	},
+	"frontend": {
+		"js_key": "1",
+		"css_key": "1",
+		"track_js": true,
+		"url": "https://tapeman.domain.ext"
+	},
+	"logLevel": "DEBUG",
+	"log4js": {
+		"replaceConsole": true,
+		"appenders": [
+			{
+				"type": "console",
+				"layout": {
+					"type": "pattern",
+					"pattern": "%[[%d{ABSOLUTE}] [%p] [%TYPE@%PID]%] %m"
+				}
+			},
+			{
+				"type": "file",
+				"filename": "./log/fetcher.log",
+				"absolute": false,
+				"maxLogSize": 20480,
+				"backups": 3,
+				"category": "console",
+				"layout": {
+					"type": "pattern",
+					"pattern": "[%d{ABSOLUTE}] [%p] [%TYPE@%PID] %m"
+				}
+			},
+			{
+				"type": "logLevelFilter",
+				"level": "DEBUG",
+				"appender": {
+					"type": "file",
+					"filename": "./log/fetcher.err",
+					"absolute": false,
+					"maxLogSize": 20480,
+					"backups": 3,
+					"layout": {
+						"type": "pattern",
+						"pattern": "[%d{ABSOLUTE}] [%p] [%TYPE@%PID] %m"
+					}
+				}
+			}
+		]
+	}
+}

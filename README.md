@@ -42,6 +42,7 @@ Before writing, you will need to run `--inventorize` to find all tapes and store
 - Support for optional HTTP based API
 - SQLITE3 database, no daemons
 - Queue capability
+- Fancy logs
 
 ## Examples
 
@@ -72,9 +73,9 @@ Will fetch file id `1` from tape
 ## Limitations / Warnings
 
 - Concurrent multi-drive support
-- LTOFS/TAPEFS - I run this on my LTO4 MSL4048, since I don't use LTOFS, this script wasn't test on it, it might just work ...
-- This script will not work without a changer, or at least wasn't tested at all without one
-- When DD fails, `tapeman` rolls back a few blocks and resume writing the file, this might not be supported by your drive, specially when automatic EOF blocks are enabled.
+- LTOFS/TAPEFS - I run this on my LTO4 MSL4048, since I don't use LTOFS, this wasn't test on it, it might just work ...
+- This will not work without a changer, or at least wasn't tested at all without one
+- When DD fails, `tapeman` rolls back a few blocks and resume writing the file, this mitigate poor tape issues, however it might not be supported by your drive, specially when automatic EOF blocks are enabled.
 
 ## TODO
 
