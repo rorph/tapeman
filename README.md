@@ -27,6 +27,8 @@ This is optional, but desired if you want to run tapeman in multiple machines wi
 1. If you want to run the PHP API backend, copy `include/config.sample.json` to `include/config.php` and edit it
 2. Setup nginx, copy `etc/nginx/tapeman.sample.conf` to `etc/nginx/tapeman.conf` editing the root path
 
+WARNING: The API backend is not supposed to be open to public access, since it implements no security. If you want to run it on a public address you can always add a simple password authentication using nginx.
+
 ## Inventorizing
 
 Before writing, you will need to run `--inventorize` to find all tapes and store their labels.
